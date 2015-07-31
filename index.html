@@ -1,0 +1,22 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="ticTacToe">
+
+<div class="game" ng-controller="TicTacToeCtrl">
+    <div class="row" ng-repeat="row in rows">
+        <div class="cell" ng-class="{'winning-cell' : cell.winningCell}" data-position="{{cell.position.x}}, {{cell.position.y}}" ng-repeat="cell in row.cells" ng-click="cellClick($event)" >
+            {{cell.value}}
+        </div>
+    </div>
+</div>
+
+<script src="angular.js"></script>
+<script src="ticTacToeService.js"></script>
+<script src="ticTacToeCtrl.js"></script>
+
+</body>
+
+
+</html>
